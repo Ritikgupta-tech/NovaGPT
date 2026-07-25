@@ -19,7 +19,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://novagpt-agwb.onrender.com",
+      "https://frontend-gink.onrender.com",
     ],
     methods: ["GET", "POST", "DELETE"],
     credentials: true,
