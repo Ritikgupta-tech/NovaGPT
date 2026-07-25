@@ -1,4 +1,3 @@
-
 import express from "express";
 import cors from "cors";
 import "dotenv/config";
@@ -11,24 +10,32 @@ dns.setServers(["8.8.8.8", "8.8.4.4"]);
 dns.setDefaultResultOrder("ipv4first");
 
 const app = express();
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
+// Middlewares
 app.use(express.json());
 
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://frontend-gink.onrender.com",
+    ],
+    methods: ["GET", "POST", "DELETE"],
+    credentials: true,
+  })
+);
 
-app.use(cors({
-    origin:"http://localhost:5173",
-    methods:["GET","POST","DELETE"],
-    credentials:true
-}));
-
-app.use("/api", chatRoutes);
-app.use((req,res,next)=>{
+// Request logger
+app.use((req, res, next) => {
   console.log(req.method, req.url);
   next();
 });
 
+// Routes
+app.use("/api", chatRoutes);
 
+// MongoDB Connection
 const connectDB = async () => {
   try {
     await mongoose.connect(process.env.MONGODB_URI);
@@ -38,6 +45,7 @@ const connectDB = async () => {
   }
 };
 
+// Start Server
 app.listen(PORT, async () => {
   console.log(`Server is running on port ${PORT}`);
   await connectDB();
