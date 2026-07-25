@@ -78,17 +78,13 @@ NovaGPT
 
 Add your screenshots inside the repository.
 
-```
 NovaGPT/
 └── screenshots/
     ├── home.png
     ├── chat-window.png
     └── threads.png
-```
 
 Then use:
-
-```md
 ### Chat Interface
 
 ![Chat Interface](./screenshots/home.png)
