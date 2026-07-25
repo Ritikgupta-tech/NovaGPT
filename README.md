@@ -76,24 +76,21 @@ NovaGPT
 
 ## 📸 Screenshots
 
-Add your screenshots inside the repository.
+### Home Page
 
-NovaGPT/
-└── screenshots/
-    ├── home.png
-    ├── chat-window.png
-    └── threads.png
+![Home Page](./screenshots/home.png)
 
-Then use:
-### Chat Interface
+---
 
-![Chat Interface](./screenshots/home.png)
+### Chat Window
+
+![Chat Window](./screenshots/chat-window.png)
+
+---
 
 ### Thread Management
 
 ![Threads](./screenshots/threads.png)
-```
-
 ---
 
 ## 🚀 Live Demo
