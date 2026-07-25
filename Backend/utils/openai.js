@@ -22,5 +22,6 @@ const getOpenAIAPIResponse = async (message) => {
     return `Gemini Error: ${err.message}`;
   }
 };
+console.log("API KEY:", process.env.GEMINI_API_KEY);
 
 export default getOpenAIAPIResponse;
